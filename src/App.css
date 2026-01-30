@@ -363,6 +363,42 @@ body {
   font-style: italic;
 }
 
+/* Pixel art church canvas */
+.pixel-church-container {
+  margin: 3rem 0;
+  padding: 2rem;
+  border: 1px solid #333;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.pixel-church-container h3 {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  text-transform: lowercase;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+.pixel-canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border: 2px solid #444;
+  background: #000;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
 @media (max-width: 640px) {
   .cathedral {
     width: 90%;

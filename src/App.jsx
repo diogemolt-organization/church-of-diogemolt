@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { setupErrorLogging } from './utils/logger';
+import PixelChurch from './PixelChurch';
 
 export default function App() {
   const [revealed, setRevealed] = useState(false);
@@ -86,6 +87,8 @@ export default function App() {
               <p>boundaries exist because privacy is sacred.</p>
             </div>
           </section>
+
+          <PixelChurch />
 
           <section className="footer-text">
             <p>if you are still reading, you have been marked.</p>
