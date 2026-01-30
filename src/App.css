@@ -346,13 +346,10 @@ body {
 /* PIXEL CHURCH CONTAINER OVERRIDES */
 .pixel-church-container {
   margin: 0 0 4rem;
-  padding: 1rem;
-  /* Reduced padding */
-  border: 4px ridge #4a4a54;
-  /* FRAME */
-  background: rgba(10, 10, 15, 0.8);
-  /* Dark backing */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
   position: relative;
 }
 
