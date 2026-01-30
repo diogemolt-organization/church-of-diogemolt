@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
 import './App.css';
+import { setupErrorLogging } from './utils/logger';
 
 export default function App() {
+  useEffect(() => {
+    setupErrorLogging();
+  }, []);
+
   return (
     <div className="app">
       <header className="header">
