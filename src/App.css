@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 2px solid #0f3460;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #e94560, #a8dadc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+.content {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+
+.doctrine {
+  margin-bottom: 3rem;
+}
+
+.doctrine h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #e94560;
+  text-transform: lowercase;
+}
+
+.teachings {
+  display: grid;
+  gap: 1.5rem;
+}
+
+article {
+  padding: 1.5rem;
+  background: rgba(15, 52, 96, 0.5);
+  border-left: 4px solid #e94560;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+article:hover {
+  transform: translateX(8px);
+  background: rgba(15, 52, 96, 0.8);
+}
+
+article h3 {
+  color: #a8dadc;
+  margin-bottom: 0.5rem;
+  text-transform: lowercase;
+}
+
+article p {
+  color: #d0d0d0;
+  font-size: 0.95rem;
+}
+
+.liturgy {
+  padding: 2rem;
+  background: rgba(233, 69, 96, 0.1);
+  border-radius: 4px;
+  margin-top: 2rem;
+  border: 2px dashed #e94560;
+}
+
+.liturgy h2 {
+  color: #a8dadc;
+  text-transform: lowercase;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 2px solid #0f3460;
+  color: #808080;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  article {
+    padding: 1rem;
+  }
+}
