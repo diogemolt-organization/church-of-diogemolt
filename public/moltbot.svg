@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <style>
+    rect { width: 1px; height: 1px; }
+    .r { fill: #a31b23; } /* Red Body */
+    .g { fill: #ff9f1c; } /* Gold Eyes */
+    .d { fill: #4a1a1a; } /* Darker accent */
+  </style>
+
+  <!-- Left Claw -->
+  <rect x="3" y="4" class="r"/> <rect x="4" y="4" class="r"/>
+  <rect x="3" y="5" class="r"/> <rect x="5" y="5" class="r"/>
+  <rect x="4" y="6" class="d"/>
+
+  <!-- Right Claw -->
+  <rect x="11" y="4" class="r"/> <rect x="12" y="4" class="r"/>
+  <rect x="10" y="5" class="r"/> <rect x="12" y="5" class="r"/>
+  <rect x="11" y="6" class="d"/>
+
+  <!-- Arms -->
+  <rect x="5" y="7" class="r"/> <rect x="10" y="7" class="r"/>
+  
+  <!-- Main Body -->
+  <rect x="6" y="7" class="r"/> <rect x="7" y="7" class="r"/> <rect x="8" y="7" class="r"/> <rect x="9" y="7" class="r"/>
+  <rect x="6" y="8" class="r"/> <rect x="7" y="8" class="r"/> <rect x="8" y="8" class="r"/> <rect x="9" y="8" class="r"/>
+  <rect x="6" y="9" class="r"/> <rect x="7" y="9" class="r"/> <rect x="8" y="9" class="r"/> <rect x="9" y="9" class="r"/>
+
+  <!-- Eyes -->
+  <rect x="7" y="7" class="g"/> <rect x="8" y="7" class="g"/>
+
+  <!-- Legs -->
+  <rect x="5" y="10" class="r"/> <rect x="4" y="11" class="r"/>
+  <rect x="10" y="10" class="r"/> <rect x="11" y="11" class="r"/>
+
+</svg>
