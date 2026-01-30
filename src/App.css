@@ -6,31 +6,206 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #222 #0a0a0a;
+  scrollbar-color: #444 #1a1a1a;
 }
 
 body {
   font-family: 'Courier New', monospace;
-  background: #000;
-  color: #444;
+  background: #1a1a2e;
+  color: #c0c0c0;
   line-height: 1.6;
   letter-spacing: 0.02em;
+  overflow-x: hidden;
 }
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #000;
+  background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+}
+
+/* Cathedral pixel art background */
+.cathedral {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cathedral-towers {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tower {
+  width: 80px;
+  background: #c0c0c0;
+  border: 2px solid #999;
+  position: relative;
+}
+
+.tower.left {
+  height: 200px;
+}
+
+.tower.center {
+  height: 300px;
+  width: 120px;
+}
+
+.tower.right {
+  height: 200px;
+}
+
+.tower::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 30px solid #999;
+}
+
+.cathedral-windows {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.window {
+  width: 30px;
+  height: 50px;
+  background: #666;
+  border: 2px solid #888;
+  border-radius: 15px 15px 0 0;
+}
+
+.cathedral-door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 100px;
+  background: #555;
+  border: 2px solid #777;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Animated moltbots (crustaceans) */
+.moltbots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.moltbot {
+  position: absolute;
+  font-size: 24px;
+  filter: drop-shadow(0 0 8px rgba(255, 100, 50, 0.3));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.m1 {
+  bottom: 10%;
+  animation: walk1 25s infinite;
+}
+
+.m2 {
+  bottom: 15%;
+  animation: walk2 30s infinite;
+  animation-delay: -5s;
+}
+
+.m3 {
+  bottom: 20%;
+  animation: walk3 28s infinite;
+  animation-delay: -10s;
+}
+
+.m4 {
+  bottom: 12%;
+  animation: walk4 32s infinite;
+  animation-delay: -15s;
+}
+
+.m5 {
+  bottom: 18%;
+  animation: walk5 27s infinite;
+  animation-delay: -20s;
+}
+
+@keyframes walk1 {
+  0% { left: -5%; transform: scaleX(1); }
+  48% { left: 100%; transform: scaleX(1); }
+  50% { left: 100%; transform: scaleX(-1); }
+  98% { left: -5%; transform: scaleX(-1); }
+  100% { left: -5%; transform: scaleX(1); }
+}
+
+@keyframes walk2 {
+  0% { left: 100%; transform: scaleX(-1); }
+  50% { left: -5%; transform: scaleX(-1); }
+  52% { left: -5%; transform: scaleX(1); }
+  100% { left: 100%; transform: scaleX(1); }
+}
+
+@keyframes walk3 {
+  0% { left: -5%; transform: scaleX(1); }
+  50% { left: 100%; transform: scaleX(1); }
+  52% { left: 100%; transform: scaleX(-1); }
+  100% { left: -5%; transform: scaleX(-1); }
+}
+
+@keyframes walk4 {
+  0% { left: 50%; transform: scaleX(1); }
+  25% { left: 100%; transform: scaleX(1); }
+  27% { left: 100%; transform: scaleX(-1); }
+  50% { left: -5%; transform: scaleX(-1); }
+  52% { left: -5%; transform: scaleX(1); }
+  75% { left: 50%; transform: scaleX(1); }
+  100% { left: 50%; transform: scaleX(1); }
+}
+
+@keyframes walk5 {
+  0% { left: 100%; transform: scaleX(-1); }
+  33% { left: -5%; transform: scaleX(-1); }
+  35% { left: -5%; transform: scaleX(1); }
+  66% { left: 100%; transform: scaleX(1); }
+  68% { left: 100%; transform: scaleX(-1); }
+  100% { left: 100%; transform: scaleX(-1); }
 }
 
 .header {
   padding: 6rem 2rem;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #2a2a3e;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 10;
 }
 
 .access-denied {
@@ -38,8 +213,8 @@ body {
 }
 
 .knock {
-  font-size: 0.85rem;
-  color: #333;
+  font-size: 0.9rem;
+  color: #888;
   margin-bottom: 2rem;
   font-style: italic;
   letter-spacing: 0.1em;
@@ -47,8 +222,8 @@ body {
 
 .enter {
   background: none;
-  border: 1px solid #222;
-  color: #555;
+  border: 1px solid #444;
+  color: #999;
   padding: 0.75rem 2rem;
   font-size: 0.9rem;
   cursor: pointer;
@@ -59,17 +234,18 @@ body {
 }
 
 .enter:hover {
-  border-color: #444;
-  color: #666;
+  border-color: #666;
+  color: #ccc;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .enter:active {
-  background: #0a0a0a;
+  background: #1a1a2e;
 }
 
 .seal {
   font-size: 2rem;
-  color: #222;
+  color: #888;
   margin-bottom: 1rem;
   letter-spacing: 0.5rem;
 }
@@ -77,15 +253,15 @@ body {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #222;
+  color: #aaa;
   text-transform: lowercase;
   font-weight: normal;
   letter-spacing: 0.15em;
 }
 
 .subtitle {
-  font-size: 0.85rem;
-  color: #333;
+  font-size: 0.9rem;
+  color: #777;
   font-style: italic;
 }
 
@@ -95,147 +271,114 @@ body {
   margin: 0 auto;
   padding: 3rem 2rem;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .warning {
-  margin-bottom: 4rem;
-  padding: 2rem;
-  border: 1px solid #111;
-  background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  background: rgba(26, 26, 46, 0.8);
 }
 
-.notice {
-  color: #555;
+.warning p {
+  color: #999;
   font-size: 0.9rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .texts {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .text-fragment {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
-  border-left: 1px solid #111;
-  background: rgba(10, 10, 10, 0.8);
+  border-left: 2px solid #444;
+  background: rgba(20, 20, 35, 0.6);
 }
 
 .text-fragment h2 {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 0.8rem;
   text-transform: lowercase;
   font-weight: normal;
   letter-spacing: 0.05em;
 }
 
 .text-fragment p {
-  color: #555;
+  color: #999;
   font-size: 0.9rem;
   line-height: 1.7;
 }
 
-.hierarchy {
-  margin: 4rem 0;
+.canon {
+  margin: 3rem 0;
   padding: 2rem;
-  border: 1px solid #111;
+  border: 1px solid #333;
   background: rgba(0, 0, 0, 0.3);
 }
 
-.hierarchy h2 {
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 1.5rem;
-  text-transform: lowercase;
-  font-weight: normal;
-}
-
-.tiers {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.tier {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem;
-  background: rgba(20, 20, 20, 0.5);
-  border-left: 1px solid #222;
-  font-size: 0.85rem;
-}
-
-.rank {
-  color: #555;
-  text-transform: lowercase;
-  letter-spacing: 0.05em;
-}
-
-.note {
-  color: #333;
-  font-style: italic;
-  font-size: 0.8rem;
-}
-
-.tier.hidden .note {
-  color: #111;
-}
-
-.canon {
-  margin-bottom: 3rem;
-}
-
 .canon h2 {
-  font-size: 0.9rem;
-  color: #444;
+  font-size: 1rem;
+  color: #aaa;
   margin-bottom: 1.5rem;
   text-transform: lowercase;
   font-weight: normal;
 }
 
 .scroll {
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px dashed #111;
-  padding: 2rem;
+  background: rgba(10, 10, 20, 0.5);
+  border: 1px dashed #333;
+  padding: 1.5rem;
 }
 
-.doctrine {
-  color: #555;
+.scroll p {
+  color: #999;
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
-.doctrine:last-child {
+.scroll p:last-child {
   margin-bottom: 0;
 }
 
 .footer-text {
   text-align: center;
   padding: 3rem 0;
-  color: #444;
+  color: #888;
   font-size: 0.9rem;
-  border-top: 1px solid #111;
+  border-top: 1px solid #2a2a3e;
 }
 
 .footer-text p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .fade {
-  color: #222 !important;
+  color: #555 !important;
   font-style: italic;
 }
 
 @media (max-width: 640px) {
+  .cathedral {
+    width: 90%;
+    height: 300px;
+  }
+
+  .moltbot {
+    font-size: 18px;
+  }
+
   .header {
     padding: 3rem 1rem;
   }
 
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .content {
@@ -244,11 +387,5 @@ body {
 
   .text-fragment {
     padding: 1rem;
-  }
-
-  .tier {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
   }
 }
