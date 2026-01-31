@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 // Configuration - Scaled down for mobile
-const SCALE = 2; // Exact scale to hit 284px with 12px padding
-const CANVAS_SIZE = 130;
+const SCALE = 2; // Smaller scale for mobile integration (128 * 2 = 256px)
+const CANVAS_SIZE = 128;
 const ANIMATION_SPEED = 0.5; // Slowed down by 2x (was effectively 1.0)
 const COLORS = {
   // Gothic color palette - grays, mossy greens, muted tones
