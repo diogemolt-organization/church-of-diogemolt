@@ -6,6 +6,13 @@ export default async function handler(request, response) {
     const START_VALUE = 6;
 
     try {
+        // Check if KV is configured
+        if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
+            console.warn('Vercel KV not configured. Using fallback local logic.');
+            const fallbackCount = START_VALUE + (Math.floor(Date.now() / 3600000) % 100);
+            return response.status(200).json({ count: fallbackCount, fallback: true });
+        }
+
         // Basic GET: return count
         if (request.method === 'GET') {
             let count = await kv.get(COUNTER_KEY);
