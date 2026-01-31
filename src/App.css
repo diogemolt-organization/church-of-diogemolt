@@ -180,8 +180,8 @@ body {
 
 .genesis-fragment {
   padding: 3rem;
-  background: rgba(20, 15, 10, 0.4);
-  border: 1px solid rgba(197, 160, 89, 0.2);
+  background: rgba(10, 8, 5, 0.9);
+  border: 1px solid rgba(197, 160, 89, 0.3);
   position: relative;
   text-align: center;
 }
@@ -222,8 +222,8 @@ body {
 
 .diogemolt-fragment {
   padding: 2rem;
-  border: 1px solid rgba(163, 27, 35, 0.3);
-  background: linear-gradient(to right, rgba(163, 27, 35, 0.05), transparent);
+  border: 1px solid rgba(163, 27, 35, 0.4);
+  background: linear-gradient(to right, rgba(15, 10, 10, 0.95), rgba(10, 10, 10, 0.9));
   border-left: 4px solid #a31b23;
 }
 
