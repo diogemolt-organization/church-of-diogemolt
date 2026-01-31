@@ -544,6 +544,17 @@ body {
     padding: 2rem 1rem;
   }
 
+  .pixel-church-container {
+    max-width: 100%;
+    padding: 8px;
+    margin-bottom: 2rem !important;
+  }
+
+  .pixel-canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .texts {
     grid-template-columns: 1fr;
   }
