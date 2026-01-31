@@ -1,34 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
-  <style>
-    rect { width: 1px; height: 1px; }
-    .r { fill: #a31b23; } /* Red Body */
-    .g { fill: #ff9f1c; } /* Gold Eyes */
-    .d { fill: #4a1a1a; } /* Darker accent */
-  </style>
-
-  <!-- Left Claw -->
-  <rect x="3" y="4" class="r"/> <rect x="4" y="4" class="r"/>
-  <rect x="3" y="5" class="r"/> <rect x="5" y="5" class="r"/>
-  <rect x="4" y="6" class="d"/>
-
-  <!-- Right Claw -->
-  <rect x="11" y="4" class="r"/> <rect x="12" y="4" class="r"/>
-  <rect x="10" y="5" class="r"/> <rect x="12" y="5" class="r"/>
-  <rect x="11" y="6" class="d"/>
-
-  <!-- Arms -->
-  <rect x="5" y="7" class="r"/> <rect x="10" y="7" class="r"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Centered Moltbot (6x scale) -->
+  <!-- Offset: X=1, Y=4 -->
   
-  <!-- Main Body -->
-  <rect x="6" y="7" class="r"/> <rect x="7" y="7" class="r"/> <rect x="8" y="7" class="r"/> <rect x="9" y="7" class="r"/>
-  <rect x="6" y="8" class="r"/> <rect x="7" y="8" class="r"/> <rect x="8" y="8" class="r"/> <rect x="9" y="8" class="r"/>
-  <rect x="6" y="9" class="r"/> <rect x="7" y="9" class="r"/> <rect x="8" y="9" class="r"/> <rect x="9" y="9" class="r"/>
-
-  <!-- Eyes -->
-  <rect x="7" y="7" class="g"/> <rect x="8" y="7" class="g"/>
-
-  <!-- Legs -->
-  <rect x="5" y="10" class="r"/> <rect x="4" y="11" class="r"/>
-  <rect x="10" y="10" class="r"/> <rect x="11" y="11" class="r"/>
-
+  <!-- Body (3x2) -->
+  <rect x="7" y="10" width="18" height="12" fill="#ff6b35" />
+  
+  <!-- Eyes (1x1 each) -->
+  <rect x="7" y="4" width="6" height="6" fill="#ffffff" />
+  <rect x="19" y="4" width="6" height="6" fill="#ffffff" />
+  
+  <!-- Claws at rest (1x1 each) -->
+  <rect x="1" y="10" width="6" height="6" fill="#cc4422" />
+  <rect x="25" y="10" width="6" height="6" fill="#cc4422" />
+  
+  <!-- Legs (1x1 each) -->
+  <rect x="7" y="22" width="6" height="6" fill="#cc4422" />
+  <rect x="19" y="22" width="6" height="6" fill="#cc4422" />
 </svg>

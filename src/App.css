@@ -107,51 +107,6 @@ body {
   }
 }
 
-.knock {
-  font-size: 1.2rem;
-  color: #a31b23;
-  /* CRIMSON - Warning */
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  text-shadow: 0 0 10px rgba(163, 27, 35, 0.5);
-}
-
-.knock-sub {
-  font-size: 0.8rem;
-  color: #c5a059;
-  /* GOLD */
-  margin-bottom: 3rem;
-  letter-spacing: 0.1em;
-  opacity: 0.8;
-}
-
-.enter {
-  background: #1a1a1e;
-  border: 1px solid #c5a059;
-  /* GOLD borders */
-  color: #c5a059;
-  padding: 1rem 3rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(197, 160, 89, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.enter:hover {
-  background: #c5a059;
-  color: #0f0f12;
-  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
-}
-
-.enter:active {
-  transform: scale(0.98);
-}
 
 .seal {
   font-size: 3rem;
@@ -350,28 +305,42 @@ body {
 .pixel-church-container {
   margin: 0 auto 4rem !important;
   /* Centered horizontally */
-  padding: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
+  padding: 12px;
+  /* Frame thickness */
+  background: #3a3a42;
+  /* stone color */
   position: relative;
   display: block;
   width: fit-content !important;
   /* Wrapper matches canvas size exactly */
   z-index: 5;
+
+  /* Stone Frame - 3D Bevel effect */
+  border: 2px solid #1e1e24;
+  /* Mortar line */
+  box-shadow:
+    /* Outer shadows to "push" it into the wall */
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    /* Bevel highlights and shadows */
+    inset 4px 4px 0px rgba(255, 255, 255, 0.05),
+    /* Inner top-left highlight */
+    inset -4px -4px 0px rgba(0, 0, 0, 0.3);
+  /* Inner bottom-right shadow */
 }
 
-/* Hole Depth Effect */
+/* Hole Depth Effect - Adjusted to sit inside the frame */
 .pixel-church-container::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
   pointer-events: none;
   box-shadow: inset 0 0 50px 15px rgba(0, 0, 0, 0.95);
   z-index: 10;
+  border: 1px solid #1a1a1e;
+  /* Cut edge of the stone */
 }
 
 /* Hidden elements */
@@ -382,11 +351,11 @@ body {
 
 .pixel-canvas {
   margin-bottom: 0 !important;
-  border: 1px solid #1a1a1e;
-  /* Dark 'cut' edge */
-  box-shadow: none;
+  border: none;
   display: block;
   /* Remove baseline gap */
+  image-rendering: pixelated;
+  /* Ensure crisp pixels */
 }
 
 @media (max-width: 640px) {

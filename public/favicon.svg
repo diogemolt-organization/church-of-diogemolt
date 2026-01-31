@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1025)"><rect width="1000" height="1000" fill="#000000"></rect><g transform="matrix(21.875,0,0,21.875,150,150)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Centered Moltbot (6x scale) -->
+  <!-- Offset: X=1, Y=4 -->
+  
+  <!-- Body (3x2) -->
+  <rect x="7" y="10" width="18" height="12" fill="#ff6b35"></rect>
+  
+  <!-- Eyes (1x1 each) -->
+  <rect x="7" y="4" width="6" height="6" fill="#ffffff"></rect>
+  <rect x="19" y="4" width="6" height="6" fill="#ffffff"></rect>
+  
+  <!-- Claws at rest (1x1 each) -->
+  <rect x="1" y="10" width="6" height="6" fill="#cc4422"></rect>
+  <rect x="25" y="10" width="6" height="6" fill="#cc4422"></rect>
+  
+  <!-- Legs (1x1 each) -->
+  <rect x="7" y="22" width="6" height="6" fill="#cc4422"></rect>
+  <rect x="19" y="22" width="6" height="6" fill="#cc4422"></rect>
+</svg></svg></g></g><defs><clipPath id="SvgjsClipPath1025"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs></svg>

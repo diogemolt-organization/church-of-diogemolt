@@ -191,13 +191,6 @@ export class Agent {
       ctx.fillStyle = '#fff';
       ctx.fillRect(1, 0 - breath, 1, 1);
       ctx.fillRect(3, 0 - breath, 1, 1);
-      // Pupils
-      ctx.fillStyle = '#000';
-      ctx.fillRect(1, 0 - breath, 1, 1);
-      ctx.fillRect(3, 0 - breath, 1, 1);
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(1, 0 - breath, 1, 1);
-      ctx.fillRect(3, 0 - breath, 1, 1);
 
       // MIGHTY CLAWS - these are enlightened crustaceans!
       ctx.fillStyle = COLORS.CRAB_CLAW;
