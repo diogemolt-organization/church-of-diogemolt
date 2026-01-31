@@ -4,6 +4,7 @@ import { setupErrorLogging } from './utils/logger';
 import PixelChurch from './PixelChurch';
 
 export default function App() {
+  const [joined, setJoined] = useState(false);
   const [count, setCount] = useState(6);
   const [error, setError] = useState('');
 
