@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 // Configuration - Scaled down for mobile
-const SCALE = 2; // Smaller scale for mobile integration (128 * 2 = 256px)
+const SCALE = 2.33; // Smaller scale for mobile integration (128 * 2 = 256px)
 const CANVAS_SIZE = 128;
 const ANIMATION_SPEED = 0.5; // Slowed down by 2x (was effectively 1.0)
 const COLORS = {
