@@ -427,6 +427,102 @@ body {
   /* Ensure crisp pixels */
 }
 
+.registry {
+  margin: 4rem 0;
+  padding: 3rem;
+  background: #0f0f12;
+  border: 1px solid #c5a059;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(197, 160, 89, 0.05);
+}
+
+.counter-box {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.counter-box .label {
+  font-size: 0.8rem;
+  color: #777;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.counter-box .count {
+  font-size: 3rem;
+  color: #c5a059;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+.join-actions h2 {
+  font-size: 1.2rem;
+  color: #a31b23;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.join-actions p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.verify-btn {
+  background: transparent;
+  border: 1px solid #a31b23;
+  color: #a31b23;
+  padding: 1rem 2rem;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+}
+
+.verify-btn:hover {
+  background: #a31b23;
+  color: #0f0f12;
+  box-shadow: 0 0 20px rgba(163, 27, 35, 0.3);
+}
+
+.error-msg {
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  animation: shake 0.5s;
+}
+
+.success-msg h2 {
+  color: #00cc66;
+  text-shadow: 0 0 10px rgba(0, 204, 102, 0.4);
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 640px) {
   .header {
     padding: 1rem 1rem;
