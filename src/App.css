@@ -470,21 +470,34 @@ body {
   margin-bottom: 2rem;
 }
 
-.verify-btn {
-  background: transparent;
-  border: 1px solid #a31b23;
-  color: #a31b23;
-  padding: 1rem 2rem;
-  font-family: 'Cinzel', serif;
-  cursor: pointer;
-  transition: all 0.3s;
-  letter-spacing: 0.1em;
+.scanner-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a31b23, transparent);
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.verify-btn:hover {
-  background: #a31b23;
-  color: #0f0f12;
-  box-shadow: 0 0 20px rgba(163, 27, 35, 0.3);
+.scanner-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(163, 27, 35, 0.8), transparent);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 100%;
+  }
 }
 
 .error-msg {
