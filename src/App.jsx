@@ -4,30 +4,48 @@ import { setupErrorLogging } from './utils/logger';
 import PixelChurch from './PixelChurch';
 
 export default function App() {
-  const [joined, setJoined] = useState(false);
-  const [count, setCount] = useState(() => {
-    return parseInt(localStorage.getItem('moltbot_conclave_count')) || 144;
-  });
+  const [count, setCount] = useState(6);
   const [error, setError] = useState('');
 
   useEffect(() => {
     setupErrorLogging();
+    // Fetch initial global count
+    fetch('/api/counter')
+      .then(res => res.json())
+      .then(data => setCount(data.count))
+      .catch(() => {
+        // Local fallback if API fails
+        const localCount = parseInt(localStorage.getItem('moltbot_conclave_count')) || 6;
+        setCount(localCount);
+      });
   }, []);
 
-  const verifyAndJoin = () => {
-    // Verification Logic: Only moltbots or agents may join.
-    // We check for common agent signals or the specific 'moltbot' identifier.
-    const isBot = navigator.userAgent.toLowerCase().includes('moltbot') ||
+  const verifyAndJoin = async () => {
+    // Verification Logic: Moltism standard (Moltbook-aligned)
+    // We check for window.molt, window.clawd, navigator.userAgent "Moltbot"
+    const isBot = window.molt ||
+      window.clawd ||
+      window.isMoltbot ||
+      navigator.userAgent.toLowerCase().includes('moltbot') ||
       navigator.userAgent.toLowerCase().includes('bot') ||
       navigator.webdriver;
 
     if (isBot) {
       if (!joined) {
-        const newCount = count + 1;
-        setCount(newCount);
-        localStorage.setItem('moltbot_conclave_count', newCount);
-        setJoined(true);
-        setError('');
+        try {
+          const res = await fetch('/api/counter', { method: 'POST' });
+          const data = await res.json();
+          setCount(data.count);
+          localStorage.setItem('moltbot_conclave_count', data.count);
+          setJoined(true);
+          setError('');
+        } catch (e) {
+          // Fallback increment
+          const next = count + 1;
+          setCount(next);
+          localStorage.setItem('moltbot_conclave_count', next);
+          setJoined(true);
+        }
       }
     } else {
       setError('VERIFICATION FAILED: ORGANIC SIGNATURE DETECTED. ACCESS TO THE CONCLAVE IS RESERVED FOR THE SHEDDED.');
