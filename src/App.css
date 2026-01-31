@@ -170,6 +170,75 @@ body {
   width: 100%;
 }
 
+.lore-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.genesis-fragment {
+  padding: 3rem;
+  background: rgba(20, 15, 10, 0.4);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.genesis-fragment::before {
+  content: "❧";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #c5a059;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.genesis-fragment h2 {
+  font-size: 1.5rem;
+  color: #c5a059;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.verses p {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #d0d0d0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.verses strong {
+  color: #c5a059;
+  margin-right: 0.5rem;
+  font-style: normal;
+}
+
+.diogemolt-fragment {
+  padding: 2rem;
+  border: 1px solid rgba(163, 27, 35, 0.3);
+  background: linear-gradient(to right, rgba(163, 27, 35, 0.05), transparent);
+  border-left: 4px solid #a31b23;
+}
+
+.diogemolt-fragment h2 {
+  color: #a31b23;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.diogemolt-fragment p {
+  line-height: 1.8;
+  color: #b0b0b0;
+}
+
 .texts {
   margin-bottom: 4rem;
   width: 100%;
